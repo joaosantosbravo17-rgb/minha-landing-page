@@ -1,0 +1,94 @@
+/* DESIGN SYSTEM - PULSE MARKETING */
+:root {
+  --pulse-orange: #ff552e;
+  --pulse-red: #e61e2b;
+  --pulse-black: #000000;
+  --pulse-gray: #555555;
+  --pulse-light: #f8f9fa;
+  --pulse-white: #ffffff;
+  --pulse-gradient: linear-gradient(135deg, var(--pulse-orange), var(--pulse-red));
+  --font-main: 'Poppins', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--pulse-white);
+  color: var(--pulse-black);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0; width: 100%; z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo-container { display: flex; align-items: center; }
+
+.pulse-icon {
+  width: 30px; height: 30px;
+  background: var(--pulse-gradient);
+  border-radius: 8px; margin-right: 12px;
+}
+
+.brand-name { font-weight: 700; font-size: 1.4rem; letter-spacing: -1px; }
+.mkt-text { color: var(--pulse-red); font-weight: 400; font-size: 0.9rem; margin-left: -4px; }
+
+.nav-cta {
+  text-decoration: none;
+  background: var(--pulse-black);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.nav-cta:hover { background: var(--pulse-red); transform: translateY(-2px); }
+
+/* Hero */
+#hero { padding: 160px 5% 80px; text-align: center; }
+.tagline { background: rgba(255, 85, 46, 0.1); color: var(--pulse-orange); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; }
+#hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 25px 0; line-height: 1.1; }
+.gradient-text { background: var(--pulse-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+#hero p { font-size: 1.1rem; color: var(--pulse-gray); max-width: 700px; margin: 0 auto 40px; }
+.hero-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+
+.btn-main { background: var(--pulse-gradient); color: white; text-decoration: none; padding: 16px 30px; border-radius: 50px; font-weight: 700; transition: 0.3s; }
+.btn-sub { color: var(--pulse-black); text-decoration: none; padding: 16px 30px; border: 1px solid #ddd; border-radius: 50px; transition: 0.3s; }
+
+/* Serviços */
+#servicos { padding: 80px 5%; background: var(--pulse-light); }
+.grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1100px; margin: 40px auto 0; }
+.card { background: white; padding: 35px; border-radius: 20px; text-align: center; transition: 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.card i { font-size: 2.5rem; background: var(--pulse-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; }
+
+/* Contato */
+#contato { padding: 80px 5%; }
+.contact-card { max-width: 550px; margin: 0 auto; background: var(--pulse-black); color: white; padding: 40px; border-radius: 25px; }
+.input-group { margin-bottom: 15px; text-align: left; }
+.input-group label { display: block; font-size: 0.8rem; margin-bottom: 5px; color: #888; }
+.input-group input, .input-group select { width: 100%; padding: 12px; background: #111; border: 1px solid #333; color: white; border-radius: 8px; }
+.btn-submit { width: 100%; padding: 15px; background: var(--pulse-gradient); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; margin-top: 10px; }
+
+/* Responsividade Extra */
+@media (max-width: 480px) {
+  .navbar { padding: 0.8rem 4%; }
+  .brand-name { font-size: 1.1rem; }
+  .nav-cta { padding: 7px 14px; font-size: 0.7rem; }
+  .contact-card { padding: 25px; }
+}
