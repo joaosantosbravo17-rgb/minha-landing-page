@@ -27,7 +27,7 @@ html { scroll-behavior: smooth; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 0.8rem 5%; /* Diminuí um pouco o padding pra logo não ficar apertada */
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -35,16 +35,27 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
-.logo-container { display: flex; align-items: center; }
-
-.pulse-icon {
-  width: 30px; height: 30px;
-  background: var(--pulse-gradient);
-  border-radius: 8px; margin-right: 12px;
+.logo-container { 
+  display: flex; 
+  align-items: center; 
 }
 
-.brand-name { font-weight: 700; font-size: 1.4rem; letter-spacing: -1px; }
-.mkt-text { color: var(--pulse-red); font-weight: 400; font-size: 0.9rem; margin-left: -4px; }
+/* --- AJUSTE DA LOGO REAL --- */
+.brand-logo {
+  height: 45px; /* Tamanho bom pra mobile e desktop */
+  width: auto;
+  margin-right: 12px;
+  object-fit: contain; /* Garante que a imagem não distorça */
+}
+
+.brand-name { 
+  display: flex;
+  flex-direction: column; /* Coloquei um em cima do outro pra dar um estilo mais pro */
+  line-height: 1;
+}
+
+.pulse-text { font-weight: 700; font-size: 1.2rem; letter-spacing: 1px; }
+.mkt-text { color: var(--pulse-red); font-weight: 400; font-size: 0.75rem; letter-spacing: 2px; }
 
 .nav-cta {
   text-decoration: none;
@@ -88,7 +99,8 @@ html { scroll-behavior: smooth; }
 /* Responsividade Extra */
 @media (max-width: 480px) {
   .navbar { padding: 0.8rem 4%; }
-  .brand-name { font-size: 1.1rem; }
+  .brand-logo { height: 35px; } /* Logo menor no celular pra não apertar o botão */
+  .brand-name { font-size: 0.9rem; }
   .nav-cta { padding: 7px 14px; font-size: 0.7rem; }
   .contact-card { padding: 25px; }
 }
