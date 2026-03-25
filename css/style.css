@@ -8,10 +8,8 @@
   --pulse-white: #ffffff;
   --pulse-gradient: linear-gradient(135deg, var(--pulse-orange), var(--pulse-red));
   --font-main: 'Poppins', sans-serif;
-  --nav-height: 90px; /* Definimos a altura da navbar para alinhar a logo grande */
 }
 
-/* Reset & Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -20,18 +18,18 @@ body {
   color: var(--pulse-black);
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: var(--nav-height); /* Compensa a navbar fixa */
+  padding-top: 100px; /* Compensa a navbar fixa maior */
 }
 
 html { scroll-behavior: smooth; }
 
-/* Barra de Navegação */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%;
-  height: var(--nav-height); /* Altura fixa para alinhar tudo */
+  /* Aumentei o padding vertical de 1rem para 1.5rem para dar respiro à logo maior */
+  padding: 1.5rem 5%; 
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -41,15 +39,15 @@ html { scroll-behavior: smooth; }
 
 .logo-container { 
   display: flex; 
-  align-items: center;
-  height: 100%; /* Ocupa a altura da navbar */
+  align-items: center; 
 }
 
-/* --- NOVA LOGO GRANDE E ÚNICA --- */
+/* --- AJUSTE DA LOGO REAL: AUMENTANDO O TAMANHO --- */
 .brand-logo-main {
-  height: 70px; /* Aumentamos bem o tamanho pra logo detalhada aparecer */
-  width: auto;
-  object-fit: contain; /* Não distorce */
+  /* Aumentei bem aqui! De 45px para 80px. */
+  height: 80px; 
+  width: auto; /* Mantém a proporção */
+  object-fit: contain; /* Garante que ela não distorça */
   display: block;
 }
 
@@ -68,7 +66,7 @@ html { scroll-behavior: smooth; }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 85, 46, 0.3); }
 
 /* Hero */
-#hero { padding: 100px 5% 80px; text-align: center; }
+#hero { padding: 120px 5% 80px; text-align: center; } /* Diminuí o padding-top já que o body já tem padding-top */
 .tagline { background: rgba(255, 85, 46, 0.1); color: var(--pulse-orange); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;}
 #hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); margin: 25px 0; line-height: 1.1; font-weight: 700; color: var(--pulse-black);}
 .gradient-text { background: var(--pulse-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -116,17 +114,16 @@ footer { padding: 40px 5%; background: var(--pulse-black); color: white; text-al
 
 /* Responsividade Extra */
 @media (max-width: 768px) {
-  :root { --nav-height: 80px; }
-  .brand-logo-main { height: 55px; }
+  .navbar { padding: 1rem 5%; }
+  .brand-logo-main { height: 60px; } /* Logo menor no tablet */
   #hero { padding: 80px 5% 60px; }
   .grid-servicos { grid-template-columns: 1fr; }
   .contact-card { padding: 30px; }
 }
 
 @media (max-width: 480px) {
-  :root { --nav-height: 70px; }
-  .navbar { padding: 0 4%; }
-  .brand-logo-main { height: 45px; }
+  .navbar { padding: 0.8rem 4%; }
+  .brand-logo-main { height: 45px; } /* Logo menor no celular pra não apertar o botão */
   .nav-cta { padding: 8px 16px; font-size: 0.75rem; }
   #hero h1 { font-size: 2rem; }
 }
