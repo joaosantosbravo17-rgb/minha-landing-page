@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulse Marketing | Impulsionando seu Negócio Local</title>
+    <title>Pulse Marketing | Performance & Resultados para Negócios Locais</title>
     
+    <meta name="description" content="Transformamos cliques em vendas reais para o seu negócio local com estratégias de tráfego pago e landing pages de alta conversão.">
     <meta property="og:title" content="Pulse Marketing | Resultados Reais">
-    <meta property="og:description" content="Transformamos cliques em vendas para o seu negócio local.">
+    <meta property="og:description" content="Domine sua região e escale seu faturamento.">
     <meta property="og:type" content="website">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,12 +20,7 @@
 
     <header class="navbar">
         <div class="logo-container">
-            <img src="logoo.png" alt="Logo Pulse Marketing" class="brand-logo">
-            
-            <div class="brand-name">
-                <span class="pulse-text">PULSE</span>
-                <span class="mkt-text">MARKETING</span>
-            </div>
+            <img src="img/pulse.png" alt="Pulse Marketing Logo" class="brand-logo-main">
         </div>
         <a href="#contato" class="nav-cta">Falar com Especialista</a>
     </header>
@@ -52,17 +47,17 @@
                 <div class="card">
                     <i class="fas fa-chart-line"></i>
                     <h3>Gestão de Tráfego</h3>
-                    <p>Anúncios certeiros no Google e Meta Ads para quem já quer comprar.</p>
+                    <p>Anúncios certeiros no Google e Meta Ads para atrair clientes prontos para comprar.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-laptop-code"></i>
                     <h3>Landing Pages</h3>
-                    <p>Páginas ultra velozes e focadas 100% em conversão (UX/UI).</p>
+                    <p>Páginas ultra velozes e focadas 100% em conversão, desenhadas para o seu público.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-bullseye"></i>
                     <h3>Tráfego Local</h3>
-                    <p>Dominamos o raio de atuação da sua empresa para atrair vizinhos.</p>
+                    <p>Dominamos o raio de atuação da sua empresa no Google Maps e redes sociais.</p>
                 </div>
             </div>
         </section>
@@ -75,7 +70,7 @@
                 <form id="form-pulse">
                     <div class="input-group">
                         <label>Nome do Negócio</label>
-                        <input type="text" placeholder="Ex: Barbearia do João" required>
+                        <input type="text" id="business-name" placeholder="Ex: Barbearia do João" required>
                     </div>
                     <div class="input-group">
                         <label>WhatsApp</label>
@@ -83,10 +78,11 @@
                     </div>
                     <div class="input-group">
                         <label>Qual seu maior desafio?</label>
-                        <select>
+                        <select id="challenge">
                             <option>Vender mais</option>
                             <option>Ser conhecido na região</option>
                             <option>Melhorar o site/página</option>
+                            <option>Outro</option>
                         </select>
                     </div>
                     <button type="submit" class="btn-submit">Enviar e Pulsar Vendas 🚀</button>
@@ -96,7 +92,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Pulse Marketing - Tecnologia aplicada ao faturamento.</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Pulse Marketing - Tecnologia aplicada ao faturamento.</p>
+            <p class="developer-credit">Desenvolvido com ⚡ por João Santos</p>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
