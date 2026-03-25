@@ -8,6 +8,7 @@
   --pulse-white: #ffffff;
   --pulse-gradient: linear-gradient(135deg, var(--pulse-orange), var(--pulse-red));
   --font-main: 'Poppins', sans-serif;
+  --nav-height: 110px; /* Definimos a altura da barra aqui para controlar tudo */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,7 +19,7 @@ body {
   color: var(--pulse-black);
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: 100px; /* Compensa a navbar fixa maior */
+  padding-top: var(--nav-height); /* O site começa exatamente onde a barra termina */
 }
 
 html { scroll-behavior: smooth; }
@@ -28,8 +29,8 @@ html { scroll-behavior: smooth; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Aumentei o padding vertical de 1rem para 1.5rem para dar respiro à logo maior */
-  padding: 1.5rem 5%; 
+  padding: 0 5%; 
+  height: var(--nav-height); /* Altura travada para evitar o clarão branco */
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -39,21 +40,22 @@ html { scroll-behavior: smooth; }
 
 .logo-container { 
   display: flex; 
-  align-items: center; 
+  align-items: center;
+  height: 100%; /* O container da logo ocupa a altura toda da barra */
 }
 
-/* --- AJUSTE DA LOGO REAL: AUMENTANDO O TAMANHO --- */
+/* --- LOGO: AGORA ELA OCUPA O ESPAÇO SEM EXPLODIR A BARRA --- */
 .brand-logo-main {
-  /* Aumentei bem aqui! De 45px para 80px. */
-  height: 80px; 
-  width: auto; /* Mantém a proporção */
-  object-fit: contain; /* Garante que ela não distorça */
+  height: 85px !important; /* Aumentei para 85px */
+  width: auto;
+  object-fit: contain;
   display: block;
+  transition: 0.3s;
 }
 
 .nav-cta {
   text-decoration: none;
-  background: var(--pulse-gradient); /* Coloquei o gradiente aqui também pra dar destaque */
+  background: var(--pulse-gradient);
   color: white;
   padding: 12px 26px;
   border-radius: 50px;
@@ -66,7 +68,7 @@ html { scroll-behavior: smooth; }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 85, 46, 0.3); }
 
 /* Hero */
-#hero { padding: 120px 5% 80px; text-align: center; } /* Diminuí o padding-top já que o body já tem padding-top */
+#hero { padding: 80px 5% 80px; text-align: center; } 
 .tagline { background: rgba(255, 85, 46, 0.1); color: var(--pulse-orange); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;}
 #hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); margin: 25px 0; line-height: 1.1; font-weight: 700; color: var(--pulse-black);}
 .gradient-text { background: var(--pulse-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -101,12 +103,6 @@ html { scroll-behavior: smooth; }
 .input-group input, .input-group select { width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: white; border-radius: 10px; font-family: var(--font-main); font-size: 1rem; transition: 0.3s; }
 .input-group input:focus, .input-group select:focus { border-color: var(--pulse-orange); outline: none; background: #222; }
 
-/* Estilizando o Select */
-.input-group select { appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23AAAAAA%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095.1c3.6-3.6%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto; }
-
-.btn-submit { width: 100%; padding: 18px; background: var(--pulse-gradient); color: white; border: none; border-radius: 10px; font-weight: 700; font-size: 1.1rem; cursor: pointer; margin-top: 20px; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 85, 46, 0.3); }
-.btn-submit:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 85, 46, 0.5); }
-
 /* Rodapé */
 footer { padding: 40px 5%; background: var(--pulse-black); color: white; text-align: center; border-top: 1px solid #222; }
 .footer-content p { font-size: 0.9rem; color: #888; margin-bottom: 5px; }
@@ -114,16 +110,16 @@ footer { padding: 40px 5%; background: var(--pulse-black); color: white; text-al
 
 /* Responsividade Extra */
 @media (max-width: 768px) {
-  .navbar { padding: 1rem 5%; }
-  .brand-logo-main { height: 60px; } /* Logo menor no tablet */
-  #hero { padding: 80px 5% 60px; }
+  :root { --nav-height: 90px; }
+  .brand-logo-main { height: 65px !important; }
+  #hero { padding: 60px 5% 60px; }
   .grid-servicos { grid-template-columns: 1fr; }
   .contact-card { padding: 30px; }
 }
 
 @media (max-width: 480px) {
-  .navbar { padding: 0.8rem 4%; }
-  .brand-logo-main { height: 45px; } /* Logo menor no celular pra não apertar o botão */
+  :root { --nav-height: 80px; }
+  .navbar { padding: 0 4%; }
+  .brand-logo-main { height: 50px !important; }
   .nav-cta { padding: 8px 16px; font-size: 0.75rem; }
-  #hero h1 { font-size: 2rem; }
 }
