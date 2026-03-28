@@ -8,7 +8,7 @@
   --pulse-white: #ffffff;
   --pulse-gradient: linear-gradient(135deg, var(--pulse-orange), var(--pulse-red));
   --font-main: 'Poppins', sans-serif;
-  --nav-height: 110px; /* Mantive a altura pra barra não ficar gigante */
+  --nav-height: 110px; 
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,17 +42,52 @@ html { scroll-behavior: smooth; }
   display: flex; 
   align-items: center;
   height: 100%; 
-  min-width: 200px; /* Garante espaço para a logo crescer pro lado */
+  flex: 1; /* Permite que a logo ocupe o espaço necessário */
 }
 
-/* --- LOGO: AGORA AJUSTADA PELA LARGURA --- */
+/* --- LOGO --- */
 .brand-logo-main {
-  width: 220px !important; /* FOCO NA LARGURA: Aumente aqui se quiser maior ainda */
-  height: auto !important;  /* Deixa a altura se ajustar sozinha */
-  max-height: 90px;        /* Não deixa ela encostar na borda da barra */
+  width: 200px !important; 
+  height: auto !important;
+  max-height: 80px;
   object-fit: contain;
   display: block;
   transition: 0.3s;
+}
+
+/* --- MENU DE NAVEGAÇÃO (NOVO) --- */
+.nav-menu {
+  display: flex;
+  gap: 35px;
+  margin: 0 40px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--pulse-black);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--pulse-gradient);
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  color: var(--pulse-orange);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
 }
 
 .nav-cta {
@@ -65,6 +100,7 @@ html { scroll-behavior: smooth; }
   font-size: 0.9rem;
   transition: 0.3s;
   box-shadow: 0 4px 10px rgba(255, 85, 46, 0.2);
+  white-space: nowrap; /* Impede o texto de quebrar linha */
 }
 
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 85, 46, 0.3); }
@@ -111,18 +147,23 @@ footer { padding: 40px 5%; background: var(--pulse-black); color: white; text-al
 .developer-credit { font-size: 0.8rem; color: #555 !important; font-weight: 300; }
 
 /* Responsividade Extra */
+@media (max-width: 992px) {
+  .nav-menu { gap: 20px; margin: 0 20px; }
+  .brand-logo-main { width: 170px !important; }
+}
+
 @media (max-width: 768px) {
-  :root { --nav-height: 90px; }
-  .brand-logo-main { width: 160px !important; }
+  :root { --nav-height: 80px; }
+  .nav-menu { display: none; } /* Esconde o menu de texto no mobile para não amontoar */
+  .navbar { padding: 0 5%; }
+  .brand-logo-main { width: 150px !important; }
   #hero { padding: 60px 5% 60px; }
   .grid-servicos { grid-template-columns: 1fr; }
   .contact-card { padding: 30px; }
 }
 
 @media (max-width: 480px) {
-  :root { --nav-height: 80px; }
-  .navbar { padding: 0 4%; }
-  .brand-logo-main { width: 130px !important; }
+  .brand-logo-main { width: 120px !important; }
   .nav-cta { padding: 8px 16px; font-size: 0.75rem; }
 }
 
@@ -133,27 +174,10 @@ footer { padding: 40px 5%; background: var(--pulse-black); color: white; text-al
     margin: 0 auto;
 }
 
-.bloco-info {
-    margin-bottom: 40px;
-}
-
-.bloco-info h2 {
-    font-size: 1.8rem;
-    color: var(--pulse-black);
-    margin-bottom: 15px;
-}
-
-.bloco-info p {
-    font-size: 1.1rem;
-    color: var(--pulse-gray);
-    margin-bottom: 20px;
-}
-
-.bloco-info ul {
-    list-style: none;
-    padding-left: 0;
-}
-
+.bloco-info { margin-bottom: 40px; }
+.bloco-info h2 { font-size: 1.8rem; color: var(--pulse-black); margin-bottom: 15px; }
+.bloco-info p { font-size: 1.1rem; color: var(--pulse-gray); margin-bottom: 20px; }
+.bloco-info ul { list-style: none; padding-left: 0; }
 .bloco-info ul li {
     background: var(--pulse-light);
     margin-bottom: 10px;
@@ -163,14 +187,5 @@ footer { padding: 40px 5%; background: var(--pulse-black); color: white; text-al
     font-weight: 600;
 }
 
-.cta-interna {
-    margin-top: 50px;
-    text-align: center;
-}
-
-/* Tornando os cards clicáveis no Index */
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
+.cta-interna { margin-top: 50px; text-align: center; }
+.card-link { text-decoration: none; color: inherit; display: block; }
