@@ -1,12 +1,12 @@
 /* JAVASCRIPT - PULSE MARKETING 
-   Foco: Interatividade e Conversão
+   Foco: Interatividade e Conversão Real
 */
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form-pulse');
     const whatsappInput = document.getElementById('whatsapp');
 
-    // 1. Efeito de Escala nos Cards ao Rolar (Scroll Reveal)
+    // 1. Efeito de Scroll Reveal nos Cards
     const cards = document.querySelectorAll('.card');
     const observerOptions = { threshold: 0.2 };
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
-    // 2. Máscara de Telefone Automática (O toque de mestre)
+    // 2. Máscara de Telefone Automática
     if (whatsappInput) {
         whatsappInput.addEventListener('input', (e) => {
             let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
@@ -34,51 +34,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Lógica do Formulário de Conversão
-    if (form) {
-        const submitBtn = form.querySelector('.btn-submit');
+    // 3. LOGICA DE ENVIO PARA WHATSAPP (A MÁGICA ACONTECE AQUI)
+    window.enviarWhatsApp = function() {
+        const businessName = document.getElementById('business-name').value;
+        const phone = document.getElementById('whatsapp').value;
+        const budget = document.getElementById('budget').value;
+        const challenge = document.getElementById('challenge').value;
+        const submitBtn = document.querySelector('.btn-submit');
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+        // Validação básica
+        if (!businessName || !phone || !budget) {
+            alert("Mano, preenche os campos obrigatórios aí! (Nome, Whats e Investimento)");
+            return;
+        }
 
-            const businessName = form.querySelector('input[type="text"]').value;
-            const whatsapp = whatsappInput.value;
+        // Efeito visual de carregamento
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gerando Diagnóstico...';
+        submitBtn.style.opacity = '0.7';
 
-            // Estilo de "Carregando"
-            submitBtn.disabled = true;
-            submitBtn.style.cursor = 'not-allowed';
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sincronizando Pulso...';
-            submitBtn.style.opacity = '0.7';
+        // Configuração da mensagem
+        const meuNumero = "5541987613156";
+        const mensagem = `Olá Pulse! 🚀%0A%0A` +
+            `*Novo Lead do Site*%0A` +
+            `*------------------------*%0A` +
+            `*Empresa:* ${businessName}%0A` +
+            `*WhatsApp:* ${phone}%0A` +
+            `*Investimento:* R$ ${budget}%0A` +
+            `*Desafio:* ${challenge}`;
 
-            // Simula o envio
-            setTimeout(() => {
-                submitBtn.innerHTML = 'Dados Enviados! 🚀';
-                submitBtn.style.background = 'linear-gradient(135deg, #28a745, #218838)';
-                submitBtn.style.opacity = '1';
-                
-                alert(`Valeu, mano! Recebemos o contato da ${businessName}. \n\nNosso estrategista vai analisar o seu nicho e te chamar no ${whatsapp} em breve.`);
+        const url = `https://api.whatsapp.com/send?phone=${meuNumero}&text=${mensagem}`;
 
-                // Reseta tudo após 3 segundos
-                setTimeout(() => {
-                    form.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.style.cursor = 'pointer';
-                    submitBtn.innerHTML = 'Enviar e Pulsar Vendas 🚀';
-                    submitBtn.style.background = 'linear-gradient(135deg, #ff552e, #e61e2b)';
-                }, 3000);
-            }, 2000);
-        });
+        // Simula um pequeno delay para dar sensação de processamento
+        setTimeout(() => {
+            window.open(url, '_blank');
+            
+            // Reseta o botão
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Enviar e Pulsar Vendas 🚀';
+            submitBtn.style.opacity = '1';
+            
+            // Limpa o form
+            document.getElementById('form-pulse').reset();
+        }, 1200);
     }
 
     // 4. Efeito de Navbar Dinâmica
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-            navbar.style.padding = '0.8rem 5%';
             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
         } else {
-            navbar.style.padding = '1.5rem 5%';
             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
         }
     });
 });
