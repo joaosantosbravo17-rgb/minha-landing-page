@@ -125,3 +125,52 @@ footer { padding: 40px 5%; background: var(--pulse-black); color: white; text-al
   .brand-logo-main { width: 130px !important; }
   .nav-cta { padding: 8px 16px; font-size: 0.75rem; }
 }
+
+/* Estilos para Páginas Internas */
+.interna .conteudo-servico {
+    padding: 140px 10% 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bloco-info {
+    margin-bottom: 40px;
+}
+
+.bloco-info h2 {
+    font-size: 1.8rem;
+    color: var(--pulse-black);
+    margin-bottom: 15px;
+}
+
+.bloco-info p {
+    font-size: 1.1rem;
+    color: var(--pulse-gray);
+    margin-bottom: 20px;
+}
+
+.bloco-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bloco-info ul li {
+    background: var(--pulse-light);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 4px solid var(--pulse-orange);
+    border-radius: 0 10px 10px 0;
+    font-weight: 600;
+}
+
+.cta-interna {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Tornando os cards clicáveis no Index */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
