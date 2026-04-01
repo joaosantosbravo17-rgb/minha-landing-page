@@ -260,17 +260,18 @@ new PulseMarketing();
 // 10. Smooth Scroll para Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const targetSelector = this.getAttribute('href');
+        const target = document.querySelector(targetSelector);
+
+        if (!target) return; // 🔥 ESSENCIAL
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
     });
 });
-
 // 11. CSS Toast Styles (injetado dinamicamente)
 const toastStyles = `
 .toast {
