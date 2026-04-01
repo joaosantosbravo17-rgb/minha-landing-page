@@ -169,11 +169,10 @@ p {
 }
 
 .logo img {
-  height: 45px;
+  height: 58px;
   width: auto;
   transition: var(--transition-fast);
 }
-
 .logo:hover img {
   transform: scale(1.05);
 }
