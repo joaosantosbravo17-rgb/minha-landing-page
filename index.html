@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18050157432"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-18050157432');
     </script>
 
@@ -14,159 +14,264 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pulse Marketing | Performance & Resultados para Negócios Locais</title>
     
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo pulse.png">
     <link rel="apple-touch-icon" href="logo pulse.png">
 
+    <!-- Meta SEO -->
     <meta name="description" content="Transformamos cliques em vendas reais para o seu negócio local com estratégias de tráfego pago e landing pages de alta conversão.">
     <meta property="og:title" content="Pulse Marketing | Resultados Reais">
     <meta property="og:description" content="Domine sua região e escale seu faturamento.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="logo pulse.png">
     
+    <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Modern CSS Reset + Style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<header class="navbar">
-    <div class="logo-container">
-        <a href="index.html">
-            <img src="pulse.png" alt="Logo" style="width: 200px !important; height: auto !important; margin-top: 5px;">
-        </a>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="pulse-loader"></div>
     </div>
 
-    <nav class="nav-menu">
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre a Pulse</a>
-    </nav>
+    <!-- Navbar Moderna -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <img src="pulse.png" alt="Pulse Marketing" loading="lazy">
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+            
+            <a href="https://wa.me/5541987613156?text=Olá Pulse! Quero escalar meu negócio local!" 
+               class="nav-cta" target="_blank">
+                <i class="fab fa-whatsapp"></i> Falar com Especialista
+            </a>
+            
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
-    <a href="https://wa.me/5541987613156?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Pulse%20Marketing!%20Gostaria%20de%20um%20diagn%C3%B3stico%20para%20escalar%20meu%20neg%C3%B3cio%20local.%20Pode%20me%20ajudar%3F" 
-       target="_blank" 
-       class="nav-cta">
-       Falar com Especialista
-    </a>
-</header>
-
-<main>
-    <section id="hero">
+    <!-- Hero Section Ultra Moderna -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <span class="tagline">Performance & Resultados</span>
-            <h1>Transformamos cliques em <span class="gradient-text">vendas reais.</span></h1>
-            <p>Pare de queimar dinheiro com anúncios que não convertem. Criamos a estratégia completa de tráfego e páginas de alta conversão para o seu negócio local dominar a região.</p>
+            <div class="hero-badge">
+                <span>🚀 Performance Marketing 2024</span>
+            </div>
+            <h1 class="hero-title">
+                Transformamos <span class="gradient-text">cliques</span><br>
+                em <span class="gradient-text">vendas reais</span>
+            </h1>
+            <p class="hero-subtitle">
+                Pare de queimar dinheiro com anúncios ruins. Nossa estratégia completa domina sua região com 
+                tráfego pago preciso + landing pages que convertem 10x mais.
+            </p>
             
-            <div class="hero-btns">
-                <a href="https://wa.me/5541987613156?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20Pulse%20Marketing!%20Gostaria%20de%20um%20diagn%C3%B3stico%20para%20minha%20empresa.%20Quero%20escalar%20meu%20faturamento!" 
-                   target="_blank" class="btn-main">Quero Escalar Meu Negócio</a>
-                <a href="#servicos" class="btn-sub">Ver Estratégia</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicos">
-        <div class="section-title">
-            <h2>O que fazemos pelo seu pulso de vendas?</h2>
-        </div>
-        <div class="grid-servicos">
-            <a href="trafego-pago.html" class="card-link">
-                <div class="card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Gestão de Tráfego</h3>
-                    <p>Anúncios certeiros no Google e Meta Ads para atrair clientes prontos para comprar.</p>
-                    <span style="color: var(--pulse-orange); font-weight: 700; font-size: 0.8rem; display: block; margin-top: 15px;">SAIBA MAIS →</span>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="247">247</div>
+                    <span>Negócios atendidos</span>
                 </div>
-            </a>
-
-            <a href="landing-pages.html" class="card-link">
-                <div class="card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Landing Pages</h3>
-                    <p>Páginas ultra velozes e focadas 100% em conversão, desenhadas para o seu público.</p>
-                    <span style="color: var(--pulse-orange); font-weight: 700; font-size: 0.8rem; display: block; margin-top: 15px;">SAIBA MAIS →</span>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4.2">4.2x</div>
+                    <span>ROI médio</span>
                 </div>
-            </a>
-
-            <a href="trafego-local.html" class="card-link">
-                <div class="card">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Tráfego Local</h3>
-                    <p>Dominamos o raio de atuação da sua empresa no Google Maps e redes sociais.</p>
-                    <span style="color: var(--pulse-orange); font-weight: 700; font-size: 0.8rem; display: block; margin-top: 15px;">SAIBA MAIS →</span>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98">98%</div>
+                    <span>Taxa de satisfação</span>
                 </div>
-            </a>
-        </div>
-    </section>
-
-    <section id="sobre" style="padding: 100px 10%; background: #fff;">
-        <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <span class="tagline">Nossa Identidade</span>
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Por que a <span class="gradient-text">Pulse Marketing?</span></h2>
-                <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
-                    A Pulse nasceu com um propósito claro: **parar de vender "likes" e começar a entregar faturamento.** Entendemos que para um negócio local, o que importa não é a métrica de vaidade, mas sim o telefone tocando e o cliente entrando pela porta.
-                </p>
-                <p style="color: #666; line-height: 1.8;">
-                    Combinamos estratégias de tráfego de nível internacional com um atendimento focado na realidade do empreendedor brasileiro. Nosso foco é criar um **pulso constante de vendas** através de anúncios precisos e páginas que não deixam o seu dinheiro escapar.
-                </p>
             </div>
-            <div style="flex: 1; min-width: 300px; background: #fdfdfd; padding: 40px; border-radius: 20px; border-left: 5px solid #ff552e; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                <h3 style="margin-bottom: 15px;">Nosso DNA:</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: #ff552e;"></i> <strong>Foco em ROI:</strong> Cada centavo investido deve retornar em lucro.</li>
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: #ff552e;"></i> <strong>Transparência Total:</strong> Dados reais, sem enrolação técnica.</li>
-                    <li style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: #ff552e;"></i> <strong>Escalabilidade:</strong> Criamos processos que permitem seu negócio crescer sem caos.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato">
-        <div class="contact-card">
-            <h2>Injete vida no seu Marketing</h2>
-            <p>Preencha os dados abaixo. Vamos analisar seu negócio e traçar um plano de ação gratuito.</p>
             
-            <form id="form-pulse">
-                <div class="input-group">
-                    <label>Nome do Negócio</label>
-                    <input type="text" id="business-name" placeholder="Ex: Barbearia do João" required>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5541987613156?text=Olá! Vi o site da Pulse e quero escalar meu negócio local!" 
+                   class="btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Escalar Meu Negócio Agora
+                </a>
+                <a href="#servicos" class="btn-secondary">
+                    <i class="fas fa-play"></i> Ver Estratégia Completa
+                </a>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-card card-1">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="floating-card card-2">
+            <i class="fas fa-bullseye"></i>
+        </div>
+    </section>
+
+    <!-- Services Grid Moderno -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nossos Superpoderes</span>
+                <h2>O que fazemos pelo seu <span class="gradient-text">pulso de vendas</span>?</h2>
+            </div>
+            
+            <div class="services-grid">
+                <a href="trafego-pago.html" class="service-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>🚀 Gestão de Tráfego</h3>
+                    <p>Anúncios certeiros no Google Ads e Meta que atraem clientes prontos pra comprar AGORA.</p>
+                    <div class="card-footer">
+                        <span>Taxa média de conversão: 12.7%</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="landing-pages.html" class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>💻 Landing Pages Pro</h3>
+                    <p>Páginas ultra rápidas otimizadas pra conversão máxima. Seu visitante vira cliente em 3 cliques.</p>
+                    <div class="card-footer">
+                        <span>+347% conversões médias</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="trafego-local.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>📍 Domínio Local</h3>
+                    <p>Seu negócio domina o Google Maps e redes sociais da sua região. Clientes locais = vendas locais.</p>
+                    <div class="card-footer">
+                        <span>Raio de 10km coberto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <span class="section-badge">Quem Somos de Verdade</span>
+                    <h2>Por que escolher a <span class="gradient-text">Pulse</span>?</h2>
+                    <p>
+                        <strong>A Pulse não vende likes. Vendemos faturamento.</strong><br><br>
+                        Entendemos que pro empreendedor local, resultado é telefone tocando e cliente entrando na porta. 
+                        Combinamos estratégias internacionais com a pegada do negócio brasileiro.
+                    </p>
+                    
+                    <div class="features-grid">
+                        <div class="feature">
+                            <i class="fas fa-coins"></i>
+                            <span>ROI Garantido</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-eye"></i>
+                            <span>Transparência Total</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-infinity"></i>
+                            <span>Escalável Infinito</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>WhatsApp (com DDD)</label>
-                    <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
+                
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="about-mockup">
+                        <img src="pulse.png" alt="Pulse Marketing" loading="lazy">
+                        <div class="pulse-ring"></div>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>Quanto pretende investir em anúncios por mês?</label>
-                    <select id="budget" required style="width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: white; border-radius: 10px;">
-                        <option value="" disabled selected>Selecione uma faixa</option>
-                        <option value="500-1000">R$ 500 a R$ 1.000</option>
-                        <option value="1000-3000">R$ 1.000 a R$ 3.000</option>
-                        <option value="3000-5000">R$ 3.000 a R$ 5.000</option>
-                        <option value="5000+">Acima de R$ 5.000</option>
-                    </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contato" class="cta">
+        <div class="cta-card">
+            <div class="cta-content">
+                <h2>🚀 Hora de injetar vida no seu marketing</h2>
+                <p>Preencha em 30s. Vamos analisar seu negócio e te entregar um plano de ação GRATUITO pra explodir as vendas.</p>
+            </div>
+            
+            <form class="cta-form" id="pulseForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nome do Negócio</label>
+                        <input type="text" placeholder="Ex: Barbearia Central" required>
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp</label>
+                        <input type="tel" placeholder="(41) 99999-9999" required>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>Qual seu maior desafio?</label>
-                    <select id="challenge">
-                        <option>Vender mais / Escalar</option>
-                        <option>Ser conhecido na região</option>
-                        <option>Melhorar o site/página</option>
-                        <option>Outro</option>
-                    </select>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Investimento mensal em anúncios</label>
+                        <select required>
+                            <option value="">Selecione...</option>
+                            <option>R$ 500 - 1.000</option>
+                            <option>R$ 1.000 - 3.000</option>
+                            <option>R$ 3.000 - 5.000</option>
+                            <option>Acima de R$ 5.000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Seu maior desafio</label>
+                        <select>
+                            <option>Vender mais/Escalar</option>
+                            <option>Ser conhecido localmente</option>
+                            <option>Melhorar conversões</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
                 </div>
-                <button type="button" onclick="enviarWhatsApp()" class="btn-submit">Enviar e Pulsar Vendas 🚀</button>
+                
+                <button type="submit" class="btn-cta">
+                    <i class="fab fa-whatsapp"></i>
+                    Enviar Plano Gratuito
+                </button>
             </form>
         </div>
     </section>
-</main>
 
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2026 Pulse Marketing - Tecnologia aplicada ao faturamento.</p>
-        <p class="developer-credit">Desenvolvido com ⚡ por João Santos</p>
-    </div>
-</footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="pulse.png" alt="Pulse Marketing" loading="lazy">
+                </div>
+                <p>&copy; 2024 Pulse Marketing. Tecnologia que acelera faturamento.</p>
+                <div class="footer-links">
+                    <a href="https://wa.me/5541987613156" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
 </body>
 </html>
