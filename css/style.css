@@ -189,3 +189,38 @@ footer { padding: 40px 5%; background: var(--pulse-black); color: white; text-al
 
 .cta-interna { margin-top: 50px; text-align: center; }
 .card-link { text-decoration: none; color: inherit; display: block; }
+
+/* --- BOTÃO PRINCIPAL AJUSTADO --- */
+.btn-main { 
+    background: var(--pulse-gradient); 
+    color: white; 
+    text-decoration: none; 
+    padding: 18px 30px; /* Reduzi um pouco o padding lateral */
+    border-radius: 50px; 
+    font-weight: 700; 
+    transition: 0.3s; 
+    box-shadow: 0 4px 15px rgba(255, 85, 46, 0.2); 
+    
+    /* Novos ajustes para o texto não quebrar o layout */
+    display: inline-block;
+    max-width: 100%;       /* Não deixa o botão ser maior que a tela */
+    line-height: 1.3;      /* Melhora o espaçamento se o texto virar 2 linhas */
+    text-align: center;
+    white-space: normal;   /* Permite que o texto quebre linha se for muito longo */
+    word-wrap: break-word; /* Garante que palavras grandes não vazem */
+}
+
+.btn-main:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 20px rgba(255, 85, 46, 0.4); 
+}
+
+/* --- AJUSTE PARA TELAS PEQUENAS (MOBILE) --- */
+@media (max-width: 480px) {
+    .btn-main {
+        display: block;    /* Faz o botão ocupar a largura disponível */
+        width: 100%;       /* Botão "full width" no celular */
+        font-size: 0.95rem; /* Diminui um pouco a fonte se necessário */
+        padding: 16px 20px;
+    }
+}
