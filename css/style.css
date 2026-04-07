@@ -105,18 +105,96 @@ html { scroll-behavior: smooth; }
 
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 85, 46, 0.3); }
 
-/* Hero */
-#hero { padding: 80px 5% 80px; text-align: center; } 
-.tagline { background: rgba(255, 85, 46, 0.1); color: var(--pulse-orange); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;}
-#hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); margin: 25px 0; line-height: 1.1; font-weight: 700; color: var(--pulse-black);}
-.gradient-text { background: var(--pulse-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-#hero p { font-size: 1.15rem; color: var(--pulse-gray); max-width: 750px; margin: 0 auto 50px; font-weight: 300; }
+/* Hero com Imagem de Fundo */
+#hero { 
+    position: relative; /* Necessário para o overlay funcionar */
+    padding: 150px 5% 150px; /* Aumentei o respiro para mostrar mais a oficina */
+    text-align: center; 
+    background-image: url('carros-meio.jpg'); /* Nome da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito parallax de luxo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Camada escura para o texto não brigar com a foto */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* 70% de escuridão */
+    z-index: 1;
+}
+
+/* Garante que o conteúdo fique na frente do escuro */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Ajuste das cores para contraste na foto */
+.tagline { 
+    background: rgba(255, 85, 46, 0.2); 
+    color: #ff552e; /* Pulse Orange direto para brilhar mais */
+    padding: 8px 16px; 
+    border-radius: 50px; 
+    font-weight: 600; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 85, 46, 0.3);
+    backdrop-filter: blur(5px); /* Efeito de vidro */
+}
+
+#hero h1 { 
+    font-size: clamp(2.2rem, 6vw, 3.8rem); 
+    margin: 25px 0; 
+    line-height: 1.1; 
+    font-weight: 700; 
+    color: #ffffff; /* Título agora é branco */
+}
+
+#hero p { 
+    font-size: 1.15rem; 
+    color: #e0e0e0; /* Cinza bem claro para leitura */
+    max-width: 750px; 
+    margin: 0 auto 50px; 
+    font-weight: 300; 
+}
+
+/* Botões */
 .hero-btns { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
-.btn-main { background: var(--pulse-gradient); color: white; text-decoration: none; padding: 18px 35px; border-radius: 50px; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 15px rgba(255, 85, 46, 0.2); }
+.btn-main { 
+    background: var(--pulse-gradient); 
+    color: white; 
+    text-decoration: none; 
+    padding: 18px 35px; 
+    border-radius: 50px; 
+    font-weight: 700; 
+    transition: 0.3s; 
+    box-shadow: 0 4px 15px rgba(255, 85, 46, 0.2); 
+}
+
 .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 85, 46, 0.4); }
-.btn-sub { color: var(--pulse-black); text-decoration: none; padding: 18px 35px; border: 1px solid #ddd; border-radius: 50px; transition: 0.3s; font-weight: 600; }
-.btn-sub:hover { background: #eee; }
+
+.btn-sub { 
+    color: #ffffff; /* Texto do botão secundário em branco */
+    text-decoration: none; 
+    padding: 18px 35px; 
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Borda branca suave */
+    border-radius: 50px; 
+    transition: 0.3s; 
+    font-weight: 600; 
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-sub:hover { background: rgba(255, 255, 255, 0.15); border-color: #fff; }
 
 /* Serviços */
 #servicos { padding: 100px 5%; background: var(--pulse-light); }
